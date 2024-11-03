@@ -1,7 +1,5 @@
+import React from "react";
+
 export default function Root() {
-  return (
-    <>
-      <h1>Hello I am from Root</h1>
-    </>
-  );
+  return <div>Root</div>;
 }
