@@ -6,20 +6,17 @@ import Root from "./routes/Root";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Statistics from "./pages/Statistics";
+import Details from "./pages/Details";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />, // Use the Root component here
-    errorElement: <div>Hello, I'm an error</div>,
+    element: <Root />,
+    errorElement: <div>Page not found</div>,
     children: [
       {
-        index: true, // This makes the Home component the default child for the root path
+        index: true,
         element: <Home />,
-      },
-      {
-        path: "hello", // No leading slash needed
-        element: <div>Hello</div>,
       },
       {
         path: "dashboard",
@@ -29,11 +26,14 @@ const router = createBrowserRouter([
         path: "statistics",
         element: <Statistics />,
       },
+      {
+        path: "details/:id",
+        element: <Details />,
+      },
     ],
   },
 ]);
 
-// Render the application
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
