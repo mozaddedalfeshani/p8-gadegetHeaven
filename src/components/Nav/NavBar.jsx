@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import heart from "../../assets/heart.png";
 import shop from "../../assets/shop.png";
 
-export default function Nav() {
+export default function NavBar() {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">

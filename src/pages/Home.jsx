@@ -6,7 +6,7 @@ const Home = () => {
     document.title = "Home | Gadget Hub "; // Change title here
   }, []);
 
-  return <div>Welcome to the Home Page!</div>;
+  return <div>Hoem</div>;
 };
 
 export default Home;
