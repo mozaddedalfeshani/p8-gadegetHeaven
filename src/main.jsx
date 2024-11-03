@@ -3,21 +3,33 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./routes/Root";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Statistics from "./pages/Statistics";
 
-// // Define the Root component
-// export default function Root() {
-//   return (
-//     <>
-//       <h1>Hello, I am from Root</h1>
-//     </>
-//   );
-// }
-
-// Define the router with the Root component
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />, // Use the Root component here
+    errorElement: <div>Hello, I'm an error</div>,
+    children: [
+      {
+        index: true, // This makes the Home component the default child for the root path
+        element: <Home />,
+      },
+      {
+        path: "hello", // No leading slash needed
+        element: <div>Hello</div>,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "statistics",
+        element: <Statistics />,
+      },
+    ],
   },
 ]);
 
