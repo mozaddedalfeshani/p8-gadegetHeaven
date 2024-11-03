@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import heart from "../../assets/heart.png";
 import shop from "../../assets/shop.png";
 
 export default function NavBar() {
+  const location = useLocation();
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -27,7 +29,11 @@ export default function NavBar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                className={location.pathname === "/" ? "underline" : ""}>
+                Home
+              </Link>
             </li>
             <li>
               <Link to="/parent">Parent</Link>
@@ -44,10 +50,22 @@ export default function NavBar() {
               <Link to="/item3">Item 3</Link>
             </li>
             <li>
-              <Link to="/statistics">Statistics</Link>
+              <Link
+                to="/statistics"
+                className={
+                  location.pathname === "/statistics" ? "underline" : ""
+                }>
+                Statistics
+              </Link>
             </li>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link
+                to="/dashboard"
+                className={
+                  location.pathname === "/dashboard" ? "underline" : ""
+                }>
+                Dashboard
+              </Link>
             </li>
           </ul>
         </div>
@@ -58,13 +76,27 @@ export default function NavBar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? "underline" : ""}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/statistics">Statistics</Link>
+            <Link
+              to="/statistics"
+              className={
+                location.pathname === "/statistics" ? "underline" : ""
+              }>
+              Statistics
+            </Link>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link
+              to="/dashboard"
+              className={location.pathname === "/dashboard" ? "underline" : ""}>
+              Dashboard
+            </Link>
           </li>
         </ul>
       </div>
