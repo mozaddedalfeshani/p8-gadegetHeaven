@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import heart from "../../assets/heart.png";
-import shop from "../../assets/shop.png";
+import heart from "../../assets/heart.png"; // Ensure this path is correct
+import shop from "../../assets/shop.png"; // Ensure this path is correct
 
 export default function NavBar() {
   const location = useLocation();
