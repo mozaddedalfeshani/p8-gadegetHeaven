@@ -14,7 +14,7 @@ export default function Root() {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, setCart }}>
       <div>
         <NavBar />
         <Outlet />
