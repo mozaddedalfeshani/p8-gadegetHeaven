@@ -9,7 +9,7 @@ export default function NavBar() {
 
   return (
     <div
-      className={`container mx-auto navbar ${
+      className={`container mx-auto navbar mt-2 ${
         isHomePage ? "bg-[#9538E2] text-white" : "bg-base-100"
       } rounded-t-[32px]`}>
       <div className="navbar-start">

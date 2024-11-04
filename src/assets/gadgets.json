@@ -12,13 +12,13 @@
   },
   {
     "product_id": 2,
-    "product_title": "Motorola X",
+    "product_title": "OPPO X",
     "product_image": "https://assorted.downloads.oppo.com/static/assets/images/products/findx/1920/sec-5-phone-3b5ba3fa48e3cee70d35806a04f2e3cdf5e4e0e8.jpg",
     "category": "Phones",
     "price": 999,
     "description": "A top-of-the-line smartphone with cutting-edge features.",
     "specification": ["128GB Storage", "6.5-inch OLED Display", "5G Support"],
-    "availability": true,
+    "availability": false,
     "rating": 4.6
   },
   {
@@ -61,7 +61,7 @@
   {
     "product_id": 6,
     "product_title": "iPhone 15",
-    "product_image": "https://i.ytimg.com/vi/XIrLAevVjc0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDHaYuGP3HEA_4bLETKh21nhZ6GiQ",
+    "product_image": "https://images.macrumors.com/article-new/2023/09/iPhone-15-General-Feature-Black.jpg",
     "category": "Phones",
     "price": 1199,
     "description": "The latest iPhone with advanced camera technology.",

@@ -30,8 +30,11 @@ const router = createBrowserRouter([
         path: "details/:id",
         element: <Details />,
         loader: async () => {
-          const response = await fetch("/gadgets.json");
+          console.log("loader running");
+          const response = await fetch("/src/assets/gadgets.json");
+          console.log("done");
           if (!response.ok) {
+            console.log("running");
             throw new Error("Failed to fetch gadgets data");
           }
           return response.json();

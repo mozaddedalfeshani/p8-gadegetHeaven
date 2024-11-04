@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Added useNavigate import
 import banner from "../assets/banner.jpg";
-import gadgetsData from "../../public/gadgets.json"; // Assuming you have a JSON file with gadgets data
+import gadgetsData from "../assets/gadgets.json";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -98,7 +98,7 @@ const Home = () => {
                     <img
                       src={gadget.product_image}
                       alt={gadget.product_title}
-                      className="w-full h-48 object-cover mb-4"
+                      className="w-full h-48 object-cover mb-4 rounded-md"
                     />
                     <h3 className="text-[20px] font-bold mb-2">
                       {gadget.product_title}
