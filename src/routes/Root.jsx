@@ -11,7 +11,9 @@ export default function Root() {
   const [cart, setCart] = useState([]);
   const [wCart, setWCart] = useState([]);
 
-  const addToWhishList = (item) => {};
+  const addToWhishList = (item) => {
+    setWCart((prevCart) => [...prevCart, item]);
+  };
 
   const addToCart = (item) => {
     setCart((prevCart) => [...prevCart, item]);

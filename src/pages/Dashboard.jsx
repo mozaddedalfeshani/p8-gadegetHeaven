@@ -1,10 +1,11 @@
 import React, { useEffect, useContext, useState } from "react";
-import { CartContext } from "../routes/root"; // Import CartContext
+import { CartContext, WishlistContext } from "../routes/root"; // Import CartContext
 import tool from "../assets/tool.png";
 
 export default function Dashboard() {
   const [wishlist, setwishlist] = useState(false);
   const { cart, setCart } = useContext(CartContext); // Use CartContext
+  const { wCart, setWCart } = useContext(WishlistContext);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -20,6 +21,14 @@ export default function Dashboard() {
     setTotal(0);
     //clear the add to cart list
     setCart([]);
+  };
+
+  const removeFromWishlist = (index) => {
+    setWCart((prevWCart) => prevWCart.filter((_, i) => i !== index));
+  };
+
+  const removeFromCart = (index) => {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
   };
 
   return (
@@ -82,9 +91,14 @@ export default function Dashboard() {
               <p>Your cart is empty</p>
             ) : (
               cart.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="relative">
                   <h3>{item.product_title}</h3>
                   <p>Price: ${item.price}</p>
+                  <button
+                    className="absolute top-2 right-2 text-red-500"
+                    onClick={() => removeFromCart(index)}>
+                    ✕
+                  </button>
                 </div>
               ))
             )}
@@ -95,7 +109,31 @@ export default function Dashboard() {
           className={`${
             wishlist ? "flex" : "hidden"
           } card card-side bg-base-100 shadow-xl wishlist items-center justify-center p-4 flex`}>
-          <div className="card-body text-black">Whislisting .....</div>
+          <div className="card-body text-black">
+            {wCart.length === 0 ? (
+              <p>Your wishlist is empty</p>
+            ) : (
+              wCart.map((item, index) => (
+                <div
+                  key={index}
+                  className="card bg-white shadow-md rounded-lg p-4 mb-4 relative">
+                  <img
+                    src={item.product_image}
+                    alt={item.product_title}
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-lg font-bold">{item.product_title}</h3>
+                  <p>Price: ${item.price}</p>
+                  <p>{item.description}</p>
+                  <button
+                    className="absolute top-2 right-2 text-red-500"
+                    onClick={() => removeFromWishlist(index)}>
+                    ✕
+                  </button>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </>

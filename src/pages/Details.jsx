@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useParams, useLoaderData } from "react-router-dom";
-import { CartContext } from "../routes/root"; // Import CartContext
+import { CartContext, WishlistContext } from "../routes/root"; // Import CartContext
 import heart from "../assets/heart.png";
 import shop from "../assets/shop.png";
 
@@ -12,6 +12,7 @@ const Details = () => {
   );
   const [selectedRating, setSelectedRating] = useState(5);
   const { addToCart } = useContext(CartContext); // Use CartContext
+  const { addToWhishList } = useContext(WishlistContext);
 
   const handleRatingChange = (rating) => {
     setSelectedRating(rating);
@@ -105,7 +106,9 @@ const Details = () => {
               >
                 Add to cart <img src={shop} className="w-[24px]" />
               </button>
-              <button className="btn btn-outline h-[48px] rounded-full">
+              <button
+                className="btn btn-outline h-[48px] rounded-full"
+                onClick={addToWhishList}>
                 <img src={heart} className="w-[24px]"></img>
               </button>
             </div>
