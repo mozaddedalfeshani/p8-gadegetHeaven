@@ -8,7 +8,10 @@ export default function NavBar() {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`navbar ${isHomePage ? "bg-[#9538E2] text-white" : "bg-base-100"} rounded-t-[32px]`}>
+    <div
+      className={`container mx-auto navbar ${
+        isHomePage ? "bg-[#9538E2] text-white" : "bg-base-100"
+      } rounded-t-[32px]`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

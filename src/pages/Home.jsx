@@ -36,8 +36,8 @@ const Home = () => {
   };
 
   return (
-    <>
-      <div className="bg-[#9538E2] mb-[330px] text-white flex flex-col justify-center items-center text-center py-4 h-[580px] rounded-b-[32px] relative">
+    <div className="container mx-auto">
+      <div className="bg-[#9538E2]  mb-[330px] text-white flex flex-col justify-center items-center text-center py-4 h-[580px] rounded-b-[32px] relative">
         <h2 className="text-[56px] font-bold my-4 px-5">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories
         </h2>
@@ -122,7 +122,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

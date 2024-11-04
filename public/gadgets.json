@@ -77,7 +77,7 @@
     "price": 75,
     "description": "Fast wireless charger for all compatible devices.",
     "specification": ["Fast Charging", "Qi Compatible", "Compact Design"],
-    "availability": true,
+    "availability": false,
     "rating": 4.2
   }
 ]
