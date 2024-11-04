@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import banner from "../assets/banner.jpg";
-import gadgetsData from "../data/gadgets.json"; // Assuming you have a JSON file with gadgets data
+import gadgetsData from "../../public/gadgets.json"; // Assuming you have a JSON file with gadgets data
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -16,13 +16,14 @@ const Home = () => {
     if (category === "All") {
       setGadgets(gadgetsData);
     } else {
-      setGadgets(gadgetsData.filter((gadget) => gadget.category === category));
+      const filteredGadgets = gadgetsData.filter((gadget) => gadget.category === category);
+      setGadgets(filteredGadgets.length > 0 ? filteredGadgets : [{ product_id: 0, product_title: "No data found" }]);
     }
   };
 
   return (
     <>
-      <div className="bg-[#9538E2] mb-[330px] text-white flex flex-col justify-center items-center text-center py-4 h-[580px] rounded-[32px] relative">
+      <div className="bg-[#9538E2] mb-[330px] text-white flex flex-col justify-center items-center text-center py-4 h-[580px] rounded-b-[32px] relative">
         <h2 className="text-[56px] font-bold my-4 px-5">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories
         </h2>
@@ -76,22 +77,28 @@ const Home = () => {
           <div className="grid grid-cols-3 gap-4">
             {gadgets.map((gadget) => (
               <div key={gadget.product_id} className="card card-bordered p-4">
-                <img
-                  src={gadget.product_image}
-                  alt={gadget.product_title}
-                  className="w-full h-48 object-cover mb-4"
-                />
-                <h3 className="text-[20px] font-bold mb-2">
-                  {gadget.product_title}
-                </h3>
-                <p className="text-[16px] mb-2">${gadget.price}</p>
-                <button
-                  className="btn"
-                  onClick={() =>
-                    (window.location.href = `/details/${gadget.product_id}`)
-                  }>
-                  Details
-                </button>
+                {gadget.product_id !== 0 ? (
+                  <>
+                    <img
+                      src={gadget.product_image}
+                      alt={gadget.product_title}
+                      className="w-full h-48 object-cover mb-4"
+                    />
+                    <h3 className="text-[20px] font-bold mb-2">
+                      {gadget.product_title}
+                    </h3>
+                    <p className="text-[16px] mb-2">${gadget.price}</p>
+                    <button
+                      className="btn"
+                      onClick={() =>
+                        (window.location.href = `/details/${gadget.product_id}`)
+                      }>
+                      Details
+                    </button>
+                  </>
+                ) : (
+                  <h3 className="text-[20px] font-bold mb-2">{gadget.product_title}</h3>
+                )}
               </div>
             ))}
           </div>

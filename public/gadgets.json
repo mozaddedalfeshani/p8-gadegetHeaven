@@ -2,7 +2,7 @@
   {
     "product_id": 1,
     "product_title": "Laptop Pro 2024",
-    "product_image": "https://example.com/images/laptop-pro.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=Laptop+Pro+2024",
     "category": "Computers",
     "price": 1200,
     "description": "The latest high-performance laptop for professionals.",
@@ -13,7 +13,7 @@
   {
     "product_id": 2,
     "product_title": "Smartphone X",
-    "product_image": "https://example.com/images/smartphone-x.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=Smartphone+X",
     "category": "Phones",
     "price": 999,
     "description": "A top-of-the-line smartphone with cutting-edge features.",
@@ -24,7 +24,7 @@
   {
     "product_id": 3,
     "product_title": "Wireless Earbuds",
-    "product_image": "https://example.com/images/wireless-earbuds.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=Wireless+Earbuds",
     "category": "Accessories",
     "price": 199,
     "description": "High-quality wireless earbuds with noise-cancellation.",
@@ -39,7 +39,7 @@
   {
     "product_id": 4,
     "product_title": "Smart Watch Series 5",
-    "product_image": "https://example.com/images/smart-watch.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=Smart+Watch+Series+5",
     "category": "Smart Watches",
     "price": 349,
     "description": "Advanced smartwatch with health tracking and GPS.",
@@ -50,7 +50,7 @@
   {
     "product_id": 5,
     "product_title": "MacBook Air 2024",
-    "product_image": "https://example.com/images/macbook-air.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=MacBook+Air+2024",
     "category": "Computers",
     "price": 1099,
     "description": "The lightest and most efficient MacBook Air yet.",
@@ -61,7 +61,7 @@
   {
     "product_id": 6,
     "product_title": "iPhone 15",
-    "product_image": "https://example.com/images/iphone-15.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=iPhone+15",
     "category": "Phones",
     "price": 1199,
     "description": "The latest iPhone with advanced camera technology.",
@@ -70,20 +70,9 @@
     "rating": 4.9
   },
   {
-    "product_id": 7,
-    "product_title": "Power Bank 20000mAh",
-    "product_image": "https://example.com/images/power-bank.jpg",
-    "category": "Power Banks",
-    "price": 50,
-    "description": "High-capacity power bank for all your devices.",
-    "specification": ["20000mAh", "Fast Charging", "Multiple Ports"],
-    "availability": true,
-    "rating": 4.4
-  },
-  {
     "product_id": 8,
     "product_title": "Wireless Charger",
-    "product_image": "https://example.com/images/wireless-charger.jpg",
+    "product_image": "https://via.placeholder.com/600x400?text=Wireless+Charger",
     "category": "Chargers",
     "price": 75,
     "description": "Fast wireless charger for all compatible devices.",
