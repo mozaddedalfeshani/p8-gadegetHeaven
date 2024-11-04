@@ -1,4 +1,4 @@
-# 📱 Gadget Heaven Store
+# 📱 Gadget Heaven Store A 72 hours fontend Projects
 
 Welcome to **Gadget Heaven Store** – your ultimate destination for high-quality gadgets! This is a single-page application built using React, designed to provide users with a seamless and interactive shopping experience.
 

@@ -1,24 +1,38 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Added useNavigate import
 import banner from "../assets/banner.jpg";
 import gadgetsData from "../../public/gadgets.json"; // Assuming you have a JSON file with gadgets data
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [gadgets, setGadgets] = useState([]);
+  const navigate = useNavigate(); // Added useNavigate hook
 
   useEffect(() => {
     document.title = "Home | Gadget Hub ";
     setGadgets(gadgetsData);
   }, []);
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (event, category) => {
+    event.preventDefault();
     setSelectedCategory(category);
     if (category === "All") {
       setGadgets(gadgetsData);
     } else {
-      const filteredGadgets = gadgetsData.filter((gadget) => gadget.category === category);
-      setGadgets(filteredGadgets.length > 0 ? filteredGadgets : [{ product_id: 0, product_title: "No data found" }]);
+      const filteredGadgets = gadgetsData.filter(
+        (gadget) => gadget.category === category
+      );
+      setGadgets(
+        filteredGadgets.length > 0
+          ? filteredGadgets
+          : [{ product_id: 0, product_title: "No data found" }]
+      );
     }
+  };
+
+  const handleDetailsClick = (event, productId) => {
+    event.preventDefault();
+    navigate(`/details/${productId}`); // Changed to use navigate
   };
 
   return (
@@ -31,7 +45,9 @@ const Home = () => {
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!
         </p>
-        <button className="btn rounded-3xl">Shop Now</button>
+        <a>
+          <button className="btn rounded-3xl">Shop Now</button>
+        </a>
 
         <div className="absolute left-1/2 transform -translate-x-1/2 top-[450px] bg-[#ffffff65] p-4 rounded-3xl shadow-lg ">
           <img
@@ -62,7 +78,7 @@ const Home = () => {
                     selectedCategory === category ? "btn-active" : ""
                   }`}
                   style={{ color: "rgba(9, 8, 15, 0.6)" }}
-                  onClick={() => handleCategoryClick(category)}>
+                  onClick={(event) => handleCategoryClick(event, category)}>
                   {category}
                 </button>
               </li>
@@ -90,14 +106,16 @@ const Home = () => {
                     <p className="text-[16px] mb-2">${gadget.price}</p>
                     <button
                       className="btn"
-                      onClick={() =>
-                        (window.location.href = `/details/${gadget.product_id}`)
+                      onClick={(event) =>
+                        handleDetailsClick(event, gadget.product_id)
                       }>
                       Details
                     </button>
                   </>
                 ) : (
-                  <h3 className="text-[20px] font-bold mb-2">{gadget.product_title}</h3>
+                  <h3 className="text-[20px] font-bold mb-2">
+                    {gadget.product_title}
+                  </h3>
                 )}
               </div>
             ))}

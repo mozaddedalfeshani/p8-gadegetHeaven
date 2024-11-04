@@ -1,8 +1,8 @@
 [
   {
     "product_id": 1,
-    "product_title": "Laptop Pro 2024",
-    "product_image": "https://via.placeholder.com/600x400?text=Laptop+Pro+2024",
+    "product_title": "MacBook Pro",
+    "product_image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-M2-Pro-and-M2-Max-hero-230117.jpg.news_app_ed.jpg",
     "category": "Computers",
     "price": 1200,
     "description": "The latest high-performance laptop for professionals.",
@@ -12,8 +12,8 @@
   },
   {
     "product_id": 2,
-    "product_title": "Smartphone X",
-    "product_image": "https://via.placeholder.com/600x400?text=Smartphone+X",
+    "product_title": "Motorola X",
+    "product_image": "https://assorted.downloads.oppo.com/static/assets/images/products/findx/1920/sec-5-phone-3b5ba3fa48e3cee70d35806a04f2e3cdf5e4e0e8.jpg",
     "category": "Phones",
     "price": 999,
     "description": "A top-of-the-line smartphone with cutting-edge features.",
@@ -24,7 +24,7 @@
   {
     "product_id": 3,
     "product_title": "Wireless Earbuds",
-    "product_image": "https://via.placeholder.com/600x400?text=Wireless+Earbuds",
+    "product_image": "https://media.wired.com/photos/59e94ff8ce22fd0cca3c5242/master/w_2560%2Cc_limit/headphones-edit-1.jpg",
     "category": "Accessories",
     "price": 199,
     "description": "High-quality wireless earbuds with noise-cancellation.",
@@ -38,8 +38,8 @@
   },
   {
     "product_id": 4,
-    "product_title": "Smart Watch Series 5",
-    "product_image": "https://via.placeholder.com/600x400?text=Smart+Watch+Series+5",
+    "product_title": "Apple Watch 6",
+    "product_image": "https://cdn.mos.cms.futurecdn.net/KkFNWYbjXjQDNG8d7C55uh.jpg",
     "category": "Smart Watches",
     "price": 349,
     "description": "Advanced smartwatch with health tracking and GPS.",
@@ -50,7 +50,7 @@
   {
     "product_id": 5,
     "product_title": "MacBook Air 2024",
-    "product_image": "https://via.placeholder.com/600x400?text=MacBook+Air+2024",
+    "product_image": "https://i.rtings.com/assets/products/PJVl4IEm/apple-macbook-air-13-2024/design-medium.jpg?format=auto",
     "category": "Computers",
     "price": 1099,
     "description": "The lightest and most efficient MacBook Air yet.",
@@ -61,7 +61,7 @@
   {
     "product_id": 6,
     "product_title": "iPhone 15",
-    "product_image": "https://via.placeholder.com/600x400?text=iPhone+15",
+    "product_image": "https://i.ytimg.com/vi/XIrLAevVjc0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDHaYuGP3HEA_4bLETKh21nhZ6GiQ",
     "category": "Phones",
     "price": 1199,
     "description": "The latest iPhone with advanced camera technology.",
@@ -72,7 +72,7 @@
   {
     "product_id": 8,
     "product_title": "Wireless Charger",
-    "product_image": "https://via.placeholder.com/600x400?text=Wireless+Charger",
+    "product_image": "https://m.media-amazon.com/images/I/611xqP657xL._AC_UF894,1000_QL80_.jpg",
     "category": "Chargers",
     "price": 75,
     "description": "Fast wireless charger for all compatible devices.",
