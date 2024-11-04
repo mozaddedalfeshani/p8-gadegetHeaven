@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import heart from "../../assets/heart.png"; // Ensure this path is correct
 import shop from "../../assets/shop.png"; // Ensure this path is correct
+import { WishlistContext } from "../../routes/Root";
 
 export default function NavBar() {
   const location = useLocation();
+  const { wCart } = useContext(WishlistContext);
+  console.log(wCart.length);
   const isHomePage = location.pathname === "/";
 
   return (
@@ -108,8 +111,16 @@ export default function NavBar() {
         <Link to="/" className="btn btn-circle mr-2  bg-[#FFFFFF]">
           <img src={shop} className="w-5" />
         </Link>
-        <Link to="/" className="btn btn-circle  bg-[#FFFFFF]">
-          <img src={heart} className="w-5" />
+        <Link to="/dashboard" className="btn btn-circle  bg-[#FFFFFF]">
+          <div className="relative">
+            <img src={heart} className=" w-5" />
+            <div
+              class={`badge ${
+                wCart.length > 0 ? "" : "hidden"
+              } absolute -top-2`}>
+              {wCart.length}
+            </div>
+          </div>
         </Link>
       </div>
     </div>
