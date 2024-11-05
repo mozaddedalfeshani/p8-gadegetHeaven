@@ -2,6 +2,12 @@ import React, { useEffect, useContext, useState } from "react";
 import { CartContext, WishlistContext } from "../routes/root";
 import tool from "../assets/tool.png";
 import close from "../assets/close.png";
+import toast, { Toaster } from "react-hot-toast";
+
+const notify = (message) => {
+  toast(message);
+  return <Toaster position="top-right" reverseOrder={false} />;
+};
 export default function Dashboard() {
   const [wishlist, setwishlist] = useState(false);
   const { cart, setCart } = useContext(CartContext);
@@ -18,14 +24,17 @@ export default function Dashboard() {
   }, [cart]);
 
   const purchageProducts = () => {
+    notify("Products purchased successfully");
     setTotal(0);
     setCart([]);
   };
 
   const removeFromWishlist = (index) => {
+    notify("Item removed from wishlist");
     setWCart((prevWCart) => prevWCart.filter((_, i) => i !== index));
   };
   const sortByPrice = () => {
+    notify("Sorting by price");
     console.log("Before sorting:", cart);
     setCart((prevCart) => {
       const sortedCart = [...prevCart].sort((a, b) => b.price - a.price);
@@ -35,10 +44,12 @@ export default function Dashboard() {
   };
 
   const removeFromCart = (index) => {
+    notify("Item removed from cart");
     setCart((prevCart) => prevCart.filter((_, i) => i !== index));
   };
 
   const addToCart = (item) => {
+    notify("Item added to cart");
     console.log(item);
     setCart((prevCart) => [...prevCart, item]);
     removeFromWishlist(wCart.indexOf(item));
@@ -82,7 +93,7 @@ export default function Dashboard() {
             <div className="flex flex-row justify-end items-center">
               <h2>Total Cost : {total}</h2>
               <button
-                className="btn mx-1 border border-primary rounded-full flex items-center"
+                className=" btn mx-1 border border-primary rounded-full flex items-center"
                 onClick={sortByPrice}>
                 Sort by price
                 <img
@@ -211,6 +222,7 @@ export default function Dashboard() {
           )}
         </div>
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 }

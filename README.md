@@ -36,3 +36,9 @@ Here's a brief overview of the folder structure:
    ```bash
    git clone https://github.com/mozaddedalfeshani/gadget-heaven-store.git
    ```
+
+2. **Run**
+
+   ```bash
+   npm install
+   ```

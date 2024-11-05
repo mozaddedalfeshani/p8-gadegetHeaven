@@ -3,7 +3,6 @@ import { useParams, useLoaderData } from "react-router-dom";
 import { CartContext, WishlistContext } from "../routes/Root"; // Import CartContext
 import heart from "../assets/heart.png";
 import shop from "../assets/shop.png";
-
 import toast, { Toaster } from "react-hot-toast";
 
 const notify = (message) => {
