@@ -119,6 +119,7 @@ const Details = () => {
           </div>
         </div>
       </div>
+      {/* <Toaster position="bottom-center" reverseOrder={true} /> */}
     </div>
   );
 };
