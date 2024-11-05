@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useParams, useLoaderData } from "react-router-dom";
-import { CartContext, WishlistContext } from "../routes/root"; // Import CartContext
+import { CartContext, WishlistContext } from "../routes/Root"; // Import CartContext
 import heart from "../assets/heart.png";
 import shop from "../assets/shop.png";
 
