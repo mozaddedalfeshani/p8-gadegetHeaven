@@ -4,6 +4,13 @@ import { CartContext, WishlistContext } from "../routes/Root"; // Import CartCon
 import heart from "../assets/heart.png";
 import shop from "../assets/shop.png";
 
+import toast, { Toaster } from "react-hot-toast";
+
+const notify = (message) => {
+  toast(message);
+  return <Toaster position="top-right" reverseOrder={false} />;
+};
+
 const Details = () => {
   const { id } = useParams();
   const gadgetsData = useLoaderData();
@@ -102,13 +109,19 @@ const Details = () => {
                 className={`${
                   gadget.availability ? "" : "btn-disabled"
                 } btn mr-2 my-2 bg-[#9538E2] w-[193px] text-white rounded-xl`}
-                onClick={() => addToCart(gadget)} // Add to cart on click
+                onClick={() => {
+                  addToCart(gadget);
+                  notify("Added to cart");
+                }} // Add to cart on click
               >
                 Add to cart <img src={shop} className="w-[24px]" />
               </button>
               <button
                 className="btn btn-outline h-[48px] rounded-full"
-                onClick={() => addToWhishList(gadget)}>
+                onClick={() => {
+                  addToWhishList(gadget);
+                  notify("Added to wishlist");
+                }}>
                 <img src={heart} className="w-[24px]"></img>
               </button>
             </div>
@@ -119,7 +132,7 @@ const Details = () => {
           </div>
         </div>
       </div>
-      {/* <Toaster position="bottom-center" reverseOrder={true} /> */}
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

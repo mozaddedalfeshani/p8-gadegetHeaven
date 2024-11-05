@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"; // Added useNavigate import
 import banner from "../assets/banner.jpg";
 import gadgetsData from "../assets/gadgets.json";
 
+
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [gadgets, setGadgets] = useState([]);
