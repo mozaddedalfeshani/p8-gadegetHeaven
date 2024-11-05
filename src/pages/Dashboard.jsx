@@ -184,7 +184,7 @@ export default function Dashboard() {
                     item.availability
                       ? "bg-purple-500"
                       : "btn-disabled bg-grey-300"
-                  }  text-white px-4  rounded-full font-semibold ml-4`}
+                  } w-[169px] text-white px-4  rounded-full font-semibold ml-4 py-2`}
                   onClick={() => {
                     addToCart(item);
 
