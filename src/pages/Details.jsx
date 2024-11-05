@@ -108,7 +108,7 @@ const Details = () => {
               </button>
               <button
                 className="btn btn-outline h-[48px] rounded-full"
-                onClick={addToWhishList}>
+                onClick={() => addToWhishList(gadget)}>
                 <img src={heart} className="w-[24px]"></img>
               </button>
             </div>

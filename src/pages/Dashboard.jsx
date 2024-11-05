@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { CartContext, WishlistContext } from "../routes/root";
 import tool from "../assets/tool.png";
-
+import close from "../assets/close.png";
 export default function Dashboard() {
   const [wishlist, setwishlist] = useState(false);
   const { cart, setCart } = useContext(CartContext);
@@ -28,6 +28,12 @@ export default function Dashboard() {
 
   const removeFromCart = (index) => {
     setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  };
+
+  const addToCart = (item) => {
+    console.log(item);
+    setCart((prevCart) => [...prevCart, item]);
+    removeFromWishlist(wCart.indexOf(item));
   };
 
   return (
@@ -97,13 +103,18 @@ export default function Dashboard() {
                   className="card card-side bg-base-100 shadow-xl w-full container mx-auto rounded-xl p-6 mb-4">
                   <figure>
                     <img
-                      src={item.product_image || "https://via.placeholder.com/150"}
+                      src={
+                        item.product_image || "https://via.placeholder.com/150"
+                      }
                       alt={item.product_title}
                     />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{item.product_title}</h2>
-                    <p><span className="font-bold">Description:</span> {item.description}</p>
+                    <p>
+                      <span className="font-bold">Description:</span>{" "}
+                      {item.description}
+                    </p>
                     <p className="font-bold text-lg">Price: ${item.price}</p>
                     <div className="card-actions justify-end">
                       <button
@@ -129,6 +140,7 @@ export default function Dashboard() {
         </div>
       </div>
 
+      {/* Whisliast zoe  */}
       <div
         className={`${
           wishlist ? "flex flex-col items-center" : "hidden"
@@ -143,7 +155,7 @@ export default function Dashboard() {
                 key={index}
                 className="bg-white shadow-md rounded-lg p-4 mb-4 flex items-center relative">
                 <img
-                  src={item.product_image || "https://via.placeholder.com/150"}
+                  src={item.product_image}
                   alt={item.product_title}
                   className="w-24 h-24 object-cover rounded-lg mr-4"
                 />
@@ -159,13 +171,17 @@ export default function Dashboard() {
                 </div>
                 <button
                   className="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold ml-4"
-                  onClick={() => addToCart(item)}>
+                  onClick={() => {
+                    addToCart(item);
+
+                    removeFromWishlist(index);
+                  }}>
                   Add to Cart
                 </button>
                 <button
                   className="absolute top-2 right-2 text-red-500 hover:text-red-700"
                   onClick={() => removeFromWishlist(index)}>
-                  ✕
+                  <img src={close} className="w-[36px]" />
                 </button>
               </div>
             ))
