@@ -180,7 +180,11 @@ export default function Dashboard() {
                   <p className="font-bold text-lg">Price: ${item.price}</p>
                 </div>
                 <button
-                  className="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold ml-4"
+                  className={`${
+                    item.availability
+                      ? "bg-purple-500"
+                      : "btn-disabled bg-grey-300"
+                  }  text-white px-4  rounded-full font-semibold ml-4`}
                   onClick={() => {
                     addToCart(item);
 
@@ -188,6 +192,9 @@ export default function Dashboard() {
                   }}>
                   Add to Cart
                 </button>
+                {item.availability ? null : (
+                  <p className="text-red-500">Out of stock</p>
+                )}
                 <button
                   className="absolute top-2 right-2 text-red-500 hover:text-red-700"
                   onClick={() => removeFromWishlist(index)}>
