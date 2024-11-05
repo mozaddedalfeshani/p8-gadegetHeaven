@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Added useNavigate import
 import banner from "../assets/banner.jpg";
-import gadgetsData from "../assets/gadgets.json";
-
+import gadgetsData from "../../public/gadgets.json";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");

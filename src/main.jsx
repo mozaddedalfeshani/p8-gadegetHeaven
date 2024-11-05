@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <Details />,
         loader: async () => {
           console.log("loader running");
-          const response = await fetch("/src/assets/gadgets.json");
+          const response = await fetch("gadgets.json");
           console.log("done");
           if (!response.ok) {
             console.log("running");

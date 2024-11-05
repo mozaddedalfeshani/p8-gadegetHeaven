@@ -79,5 +79,60 @@
     "specification": ["Fast Charging", "Qi Compatible", "Compact Design"],
     "availability": false,
     "rating": 4.2
+  },
+  {
+    "product_id": 14,
+    "product_title": "Dell XPS 13",
+    "product_image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/9345/media-gallery/touch/gray/notebook-xps-13-9345-t-gray-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3509&hei=2082&qlt=100,1&resMode=sharp2&size=3509,2082&chrss=full&imwidth=5000",
+    "category": "Computers",
+    "price": 1250,
+    "description": "Ultra-thin laptop with high-resolution display and powerful performance.",
+    "specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor"],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 15,
+    "product_title": "Samsung Galaxy S22",
+    "product_image": "https://images.samsung.com/is/image/samsung/p6pim/ar/2202/gallery/ar-galaxy-s22-ultra-s908-sm-s908edrmaro-530923099?$650_519_PNG$",
+    "category": "Phones",
+    "price": 899,
+    "description": "Flagship smartphone with advanced camera and performance.",
+    "specification": ["256GB Storage", "6.1-inch AMOLED Display", "5G Support"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 16,
+    "product_title": "Beats Studio Buds",
+    "product_image": "https://assets.gadgetandgear.com/upload/product/20210904_1630745274_393587.png",
+    "category": "Accessories",
+    "price": 149,
+    "description": "Wireless earbuds with active noise cancellation and rich sound quality.",
+    "specification": ["Bluetooth 5.0", "ANC", "24 Hours Battery"],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": 17,
+    "product_title": "Fitbit Versa 3",
+    "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Fitbit-Versa-3-Smart-Watch-Black-9119.jpg",
+    "category": "Smart Watches",
+    "price": 229,
+    "description": "Smartwatch with GPS, heart rate tracking, and voice assistant.",
+    "specification": ["Heart Rate Monitor", "GPS", "Sleep Tracking"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 18,
+    "product_title": "Anker PowerPort Wireless",
+    "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzhS1pvr04i1lnK7k1-klw8QMJAsCYTxVRoeyVbstMFaTr4CElnje_VnsMe6vz4p3B1vo&usqp=CAU",
+    "category": "Chargers",
+    "price": 60,
+    "description": "Compact wireless charger with fast-charging capabilities.",
+    "specification": ["Qi Compatible", "Fast Charging", "Portable Design"],
+    "availability": false,
+    "rating": 4.3
   }
 ]
