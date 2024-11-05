@@ -25,6 +25,14 @@ export default function Dashboard() {
   const removeFromWishlist = (index) => {
     setWCart((prevWCart) => prevWCart.filter((_, i) => i !== index));
   };
+  const sortByPrice = () => {
+    console.log("Before sorting:", cart);
+    setCart((prevCart) => {
+      const sortedCart = [...prevCart].sort((a, b) => b.price - a.price);
+      console.log("After sorting:", sortedCart);
+      return sortedCart;
+    });
+  };
 
   const removeFromCart = (index) => {
     setCart((prevCart) => prevCart.filter((_, i) => i !== index));
@@ -73,7 +81,9 @@ export default function Dashboard() {
             </div>
             <div className="flex flex-row justify-end items-center">
               <h2>Total Cost : {total}</h2>
-              <button className="btn mx-1 border border-primary rounded-full flex items-center">
+              <button
+                className="btn mx-1 border border-primary rounded-full flex items-center"
+                onClick={sortByPrice}>
                 Sort by price
                 <img
                   className="w-[36px] h-[36px] rounded-full mx-2 flex items-center justify-center ml-1"
