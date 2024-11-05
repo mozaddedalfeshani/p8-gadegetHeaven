@@ -91,7 +91,9 @@ export default function Dashboard() {
                 />
               </button>
               <button
-                className="btn mx-1 bg-[#8332C5] text-white rounded-3xl"
+                className={`${
+                  cart.length === 0 ? "btn-disabled" : null
+                } btn mx-1 bg-[#8332C5] text-white rounded-3xl`}
                 onClick={purchageProducts}>
                 Purchase
               </button>
@@ -105,19 +107,14 @@ export default function Dashboard() {
           } w-full container mx-auto rounded-xl p-6`}>
           <div className="w-full max-w-3xl">
             {cart.length === 0 ? (
-              <p>Your cart is empty</p>
+              <p className="text-center">Your cart is empty</p>
             ) : (
               cart.map((item, index) => (
                 <div
                   key={index}
                   className="card card-side bg-base-100 shadow-xl w-full container mx-auto rounded-xl p-6 mb-4">
                   <figure>
-                    <img
-                      src={
-                        item.product_image || "https://via.placeholder.com/150"
-                      }
-                      alt={item.product_title}
-                    />
+                    <img src={item.product_image} alt={item.product_title} />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{item.product_title}</h2>
@@ -139,14 +136,23 @@ export default function Dashboard() {
             )}
           </div>
 
-          <div className="mt-4 flex justify-between items-center w-full max-w-3xl">
+          {/* <div className="mt-4 flex justify-between items-center w-full max-w-3xl">
             <h2 className="font-bold text-xl">Total Cost: ${total}</h2>
             <button
-              className="bg-purple-500 text-white px-6 py-3 rounded-full font-semibold"
+              className={`${
+                cart.length === 0 ? "btn-disabled" : null
+              } bg-purple-500 text-white px-6 py-3 rounded-full  font-semibold`}
               onClick={purchageProducts}>
               Purchase
             </button>
-          </div>
+            <button
+              className={`${
+                cart.length === 0 ? "btn-disabled" : null
+              } btn mx-1 bg-[#8332C5] text-white rounded-3xl`}
+              onClick={purchageProducts}>
+              Purchase
+            </button>
+          </div> */}
         </div>
       </div>
 
@@ -158,7 +164,7 @@ export default function Dashboard() {
         <h2 className="text-2xl font-bold mb-4">WishList</h2>
         <div className="w-full max-w-3xl">
           {wCart.length === 0 ? (
-            <p>Your wishlist is empty</p>
+            <p className="text-center">Your wishlist is empty</p>
           ) : (
             wCart.map((item, index) => (
               <div
