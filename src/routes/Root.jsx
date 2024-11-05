@@ -3,10 +3,11 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../components/Nav/NavBar";
 import Footer from "../pages/Footer";
 
-// Create a context for the cart
+// Create contexts
 export const CartContext = createContext();
-export const WishlistContext = React.createContext();
+export const WishlistContext = createContext();
 
+// Define CartProvider
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
@@ -21,7 +22,8 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-export default function Root() {
+// Define WishlistProvider
+export const WishlistProvider = ({ children }) => {
   const [wCart, setWCart] = useState([]);
 
   const addToWhishList = (item) => {
@@ -29,7 +31,15 @@ export default function Root() {
   };
 
   return (
-    <WishlistContext.Provider value={{ wCart, addToWhishList, setWCart }}>
+    <WishlistContext.Provider value={{ wCart, setWCart, addToWhishList }}>
+      {children}
+    </WishlistContext.Provider>
+  );
+};
+
+export default function Root() {
+  return (
+    <WishlistProvider>
       <CartProvider>
         <div>
           <NavBar />
@@ -37,6 +47,6 @@ export default function Root() {
           <Footer />
         </div>
       </CartProvider>
-    </WishlistContext.Provider>
+    </WishlistProvider>
   );
 }
