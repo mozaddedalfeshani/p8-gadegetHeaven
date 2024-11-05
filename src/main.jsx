@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Statistics />,
       },
       {
-        path: "details/:id",
+        path: "/details/:id",
         element: <Details />,
         loader: async () => {
           console.log("loader running");

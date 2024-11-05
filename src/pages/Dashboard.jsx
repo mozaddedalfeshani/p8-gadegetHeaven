@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { CartContext, WishlistContext } from "../routes/root";
+import { CartContext, WishlistContext } from "../routes/Root";
 import tool from "../assets/tool.png";
 import close from "../assets/close.png";
 import toast, { Toaster } from "react-hot-toast";
