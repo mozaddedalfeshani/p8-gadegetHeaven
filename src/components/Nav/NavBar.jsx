@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import heart from "../../assets/heart.png"; // Ensure this path is correct
 import shop from "../../assets/shop.png"; // Ensure this path is correct
-import { WishlistContext } from "../../routes/Root";
+import { CartContext, WishlistContext } from "../../routes/Root";
 
 export default function NavBar() {
   const location = useLocation();
   const { wCart } = useContext(WishlistContext);
+  const { cart } = useContext(CartContext);
   console.log(wCart.length);
   const isHomePage = location.pathname === "/";
 
@@ -105,15 +106,33 @@ export default function NavBar() {
               Dashboard
             </Link>
           </li>
+          <li>
+            <Link
+              to="/contact"
+              // className={location.pathname === "/dashboard" ? "underline" : ""}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/" className="btn btn-circle mr-2  bg-[#FFFFFF]">
-          <img src={shop} className="w-5" />
+        <Link to="/dashboard" className="btn btn-circle mr-2  bg-[#FFFFFF]">
+          <div className="relative">
+            <img src={shop} className="w-6" />
+            {console.log(cart.length)}
+            <div
+              className={`badge absolute -top-2 ${
+                cart.length > 0 ? "" : "hidden"
+              }`}>
+              {cart.length}
+            </div>
+          </div>
         </Link>
         <Link to="/dashboard" className="btn btn-circle  bg-[#FFFFFF]">
           <div className="relative">
             <img src={heart} className=" w-5" />
+
             <div
               class={`badge ${
                 wCart.length > 0 ? "" : "hidden"

@@ -4,6 +4,7 @@ import tool from "../assets/tool.png";
 import close from "../assets/close.png";
 import toast, { Toaster } from "react-hot-toast";
 import Modal from "../components/Modal";
+import verified from "../assets/verified.png";
 
 const showModal = () => {
   return <Modal />;
@@ -16,7 +17,7 @@ const notify = (message) => {
 
 export default function Dashboard() {
   const [wishlist, setwishlist] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+
   const { cart, setCart } = useContext(CartContext);
   const { wCart, setWCart } = useContext(WishlistContext);
   const [total, setTotal] = useState(0);
@@ -64,10 +65,18 @@ export default function Dashboard() {
     <>
       {/* Khella shuru  */}
       <dialog id="my_modal_2" className="modal">
-        <div className="modal-box card">
+        <div className="modal-box card ">
           {console.log(total, "dd")}
-          <h3 className="font-bold text-lg">{updateTotal}</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <div className="card-body flex-col justify-center items-center">
+            <img src={verified} className="w-20" />
+            <hr style={{ color: "black" }} />
+            <p className="font-bold">Payment Successfully</p>
+            <p className="text-[##09080f99] text-[16px]">
+              Thank's for purchasing
+            </p>
+            <h3 className="font-bold text-lg">Total : {updateTotal}</h3>
+            <p className="py-4">Click outside to close</p>
+          </div>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

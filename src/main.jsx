@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Statistics from "./pages/Statistics";
 import Details from "./pages/Details";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "statistics",
         element: <Statistics />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
       {
         path: "/details/:id",
