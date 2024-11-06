@@ -148,19 +148,25 @@ export default function Dashboard() {
           className={`${
             wishlist ? "hidden" : "flex flex-col items-center"
           } w-full container mx-auto rounded-xl p-6`}>
-          <div className="w-full max-w-3xl">
+          <div className="w-full ">
             {cart.length === 0 ? (
               <p className="text-center">Your cart is empty</p>
             ) : (
               cart.map((item, index) => (
                 <div
                   key={index}
-                  className="card card-side bg-base-100 shadow-xl w-full container mx-auto rounded-xl p-6 mb-4">
+                  className="card card-side bg-base-100 shadow-xl w-[1280px] relative container h-[188px] mx-auto rounded-xl p-6 mb-4">
                   <figure>
-                    <img src={item.product_image} alt={item.product_title} />
+                    <img
+                      src={item.product_image}
+                      alt={item.product_title}
+                      className="w-[200px] h-[124px] rounded-md"
+                    />
                   </figure>
                   <div className="card-body">
-                    <h2 className="card-title">{item.product_title}</h2>
+                    <h2 className="card-title text-[24px]">
+                      {item.product_title}
+                    </h2>
                     <p>
                       <span className="font-bold">Description:</span>{" "}
                       {item.description}
@@ -168,9 +174,9 @@ export default function Dashboard() {
                     <p className="font-bold text-lg">Price: ${item.price}</p>
                     <div className="card-actions justify-end">
                       <button
-                        className="btn btn-primary"
+                        className="absolute top-2 right-0"
                         onClick={() => removeFromCart(index)}>
-                        Close
+                        <img src={close} className="w-[24px]" />
                       </button>
                     </div>
                   </div>
