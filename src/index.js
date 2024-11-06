@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { CartProvider, WishlistProvider } from './routes/root';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { CartProvider, WishlistProvider } from "./routes/root";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,5 +11,5 @@ ReactDOM.render(
       </WishlistProvider>
     </CartProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

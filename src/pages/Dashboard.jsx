@@ -3,11 +3,17 @@ import { CartContext, WishlistContext } from "../routes/Root";
 import tool from "../assets/tool.png";
 import close from "../assets/close.png";
 import toast, { Toaster } from "react-hot-toast";
+import Modal from "../components/Modal";
+
+const showModal = () => {
+  return <Modal />;
+};
 
 const notify = (message) => {
   toast(message);
   return <Toaster position="top-right" reverseOrder={false} />;
 };
+
 export default function Dashboard() {
   const [wishlist, setwishlist] = useState(false);
   const { cart, setCart } = useContext(CartContext);
@@ -33,12 +39,11 @@ export default function Dashboard() {
     notify("Item removed from wishlist");
     setWCart((prevWCart) => prevWCart.filter((_, i) => i !== index));
   };
+
   const sortByPrice = () => {
     notify("Sorting by price");
-    console.log("Before sorting:", cart);
     setCart((prevCart) => {
       const sortedCart = [...prevCart].sort((a, b) => b.price - a.price);
-      console.log("After sorting:", sortedCart);
       return sortedCart;
     });
   };
@@ -50,13 +55,24 @@ export default function Dashboard() {
 
   const addToCart = (item) => {
     notify("Item added to cart");
-    console.log(item);
     setCart((prevCart) => [...prevCart, item]);
     removeFromWishlist(wCart.indexOf(item));
   };
 
+  const [updateTotal, setUpdateTotal] = useState(0);
   return (
     <>
+      {/* Khella shuru  */}
+      <dialog id="my_modal_2" className="modal">
+        <div className="modal-box card">
+          {console.log(total, "dd")}
+          <h3 className="font-bold text-lg">{updateTotal}</h3>
+          <p className="py-4">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
       <div className="p-5 text-white bg-[#9538E2] flex flex-col  pt-[50px] pb-[80px] relative items-center justify-center">
         <h2 className="text-[32px] font-bold">Dashboard</h2>
         <p className="max-w-[796px] text-center text-[16px]">
@@ -103,9 +119,16 @@ export default function Dashboard() {
               </button>
               <button
                 className={`${
-                  cart.length === 0 ? "btn-disabled" : null
+                  cart.length === 0 ? "btn-disabled" : ""
                 } btn mx-1 bg-[#8332C5] text-white rounded-3xl`}
-                onClick={purchageProducts}>
+                onClick={() => {
+                  console.log("Showing modal...");
+                  document.getElementById("my_modal_2").showModal();
+                  console.log("Calling purchaseProducts..."); // Debugging
+                  console.log(total);
+                  setUpdateTotal(total);
+                  purchageProducts();
+                }}>
                 Purchase
               </button>
             </div>
@@ -146,28 +169,10 @@ export default function Dashboard() {
               ))
             )}
           </div>
-
-          {/* <div className="mt-4 flex justify-between items-center w-full max-w-3xl">
-            <h2 className="font-bold text-xl">Total Cost: ${total}</h2>
-            <button
-              className={`${
-                cart.length === 0 ? "btn-disabled" : null
-              } bg-purple-500 text-white px-6 py-3 rounded-full  font-semibold`}
-              onClick={purchageProducts}>
-              Purchase
-            </button>
-            <button
-              className={`${
-                cart.length === 0 ? "btn-disabled" : null
-              } btn mx-1 bg-[#8332C5] text-white rounded-3xl`}
-              onClick={purchageProducts}>
-              Purchase
-            </button>
-          </div> */}
         </div>
       </div>
 
-      {/* Whisliast zoe  */}
+      {/* Wishlist zone */}
       <div
         className={`${
           wishlist ? "flex flex-col items-center" : "hidden"
@@ -204,7 +209,6 @@ export default function Dashboard() {
                   } w-[169px] text-white px-4  rounded-full font-semibold ml-4 py-2`}
                   onClick={() => {
                     addToCart(item);
-
                     removeFromWishlist(index);
                   }}>
                   Add to Cart
