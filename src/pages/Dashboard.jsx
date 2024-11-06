@@ -16,6 +16,7 @@ const notify = (message) => {
 
 export default function Dashboard() {
   const [wishlist, setwishlist] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const { cart, setCart } = useContext(CartContext);
   const { wCart, setWCart } = useContext(WishlistContext);
   const [total, setTotal] = useState(0);
@@ -56,7 +57,6 @@ export default function Dashboard() {
   const addToCart = (item) => {
     notify("Item added to cart");
     setCart((prevCart) => [...prevCart, item]);
-    removeFromWishlist(wCart.indexOf(item));
   };
 
   const [updateTotal, setUpdateTotal] = useState(0);
