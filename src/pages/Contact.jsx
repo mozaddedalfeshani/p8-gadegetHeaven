@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,6 +22,9 @@ export default function Contact() {
     // Here you can handle the form submission (e.g., send the data to an API)
     console.log("Form submitted", formData);
   };
+  useEffect(() => {
+    document.title = "Contact | Gadget Hub";
+  }, []);
 
   return (
     <div className="container mx-auto p-10 card card-bordered my-5 text-[#ffffff] bg-gradient-to-r from-[#9538e2d8] via-[#9766be] to-[#ba90f5] ">

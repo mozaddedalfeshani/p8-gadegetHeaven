@@ -31,7 +31,7 @@ export default function Statistics() {
 
   return (
     <div
-      className="container mx-auto
+      className="
     ">
       <div className="p-5 text-white bg-[#9538E2] flex flex-col pt-[50px] pb-[80px] relative items-center justify-center">
         <h2 className="text-[32px] font-bold">Statistics</h2>
@@ -40,7 +40,9 @@ export default function Statistics() {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
-      <h2 className="text-2xl font-bold mb-5 my-10">Statistics</h2>
+      <h2 className="text-2xl container mx-auto  font-bold mb-5 my-10">
+        Statistics
+      </h2>
       {/* Chart Start */}
       <div className="container mx-auto my-2 p-5 bg-gray-50 rounded-lg shadow-lg">
         <ResponsiveContainer width="100%" height={400}>
