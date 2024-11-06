@@ -190,10 +190,10 @@ export default function Dashboard() {
       {/* Wishlist zone */}
       <div
         className={`${
-          wishlist ? "flex flex-col items-center" : "hidden"
+          wishlist ? "flex flex-col  items-center" : "hidden"
         } bg-gray-100 p-6`}>
         <h2 className="text-2xl font-bold mb-4">WishList</h2>
-        <div className="w-full max-w-3xl">
+        <div className="w-full container mx-auto ">
           {wCart.length === 0 ? (
             <p className="text-center">Your wishlist is empty</p>
           ) : (
