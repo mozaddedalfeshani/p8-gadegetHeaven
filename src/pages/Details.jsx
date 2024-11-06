@@ -18,10 +18,22 @@ const Details = () => {
   );
   const [selectedRating, setSelectedRating] = useState(5);
   const { addToCart } = useContext(CartContext); // Use CartContext
-  const { addToWhishList } = useContext(WishlistContext);
+  const { addToWhishList, wCart } = useContext(WishlistContext); // Use WishlistContext
+
+  const [wishlistAdded, setWishlistAdded] = useState(false);
 
   const handleRatingChange = (rating) => {
     setSelectedRating(rating);
+  };
+
+  const handleAddToWishlist = (gadget) => {
+    if (!wCart.some((item) => item.product_id === gadget.product_id)) {
+      addToWhishList(gadget);
+      notify("Added to wishlist");
+      setWishlistAdded(true);
+    } else {
+      notify("Item already in wishlist");
+    }
   };
 
   if (!gadget) {
@@ -116,11 +128,11 @@ const Details = () => {
                 Add to cart <img src={shop} className="w-[24px]" />
               </button>
               <button
-                className="btn btn-outline h-[48px] rounded-full"
-                onClick={() => {
-                  addToWhishList(gadget);
-                  notify("Added to wishlist");
-                }}>
+                className={`btn btn-outline h-[48px] rounded-full ${
+                  wishlistAdded ? "btn-disabled" : ""
+                }`}
+                onClick={() => handleAddToWishlist(gadget)}
+                disabled={wishlistAdded}>
                 <img src={heart} className="w-[24px]"></img>
               </button>
             </div>
